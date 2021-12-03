@@ -54,7 +54,8 @@ export default {
         key: "30c1530f5dbea7332b39bce40ca9adef",
       })
       .then((res) => {
-        console.log(res);
+        // console.log(res);
+        console.log('测试2')
         if (res.status == 200) {
           console.log(res);
           this.covdInfo.note1 = res.data.newslist[0].desc.note1;
