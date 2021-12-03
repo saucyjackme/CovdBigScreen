@@ -56,6 +56,7 @@ export default {
       .then((res) => {
         console.log(res);
         if (res.status == 200) {
+          console.log(res);
           this.covdInfo.note1 = res.data.newslist[0].desc.note1;
           this.covdInfo.note2 = res.data.newslist[0].desc.note2;
           this.covdInfo.note3 = res.data.newslist[0].desc.note3;
