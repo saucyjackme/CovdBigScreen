@@ -75,6 +75,8 @@
                 </li>
             </ul>
         </div>
+        <div id="line"></div>
+        <div id="chinaMap"></div>
     </div>
 </template>
 
@@ -87,6 +89,10 @@ export default {
                 return {};
             },
         },
+    },
+    mounted() {
+      this.$echarts.line('line');
+      this.$echarts.chinaMap('chinaMap')
     },
     methods: {
         formatData(date) {
@@ -218,5 +224,15 @@ export default {
     font-weight: 700;
     font-size: 0.11rem;
     line-height: 0.15rem;
+}
+
+#line {
+  width: 400px;
+  height: 400px;
+}
+
+#chinaMap {
+    width: 400px;
+    height: 400px;
 }
 </style>
