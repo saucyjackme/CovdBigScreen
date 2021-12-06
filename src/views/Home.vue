@@ -3,6 +3,7 @@
     <Header></Header>
     <covd-info :covdInfo="covdInfo"></covd-info>
     <china-covd-info :chinaCovdInfo="chinaCovdInfo"></china-covd-info>
+    <Map></Map>
   </div>
 </template>
 
@@ -12,13 +13,15 @@ import api from "../api";
 import Header from "@/components/Header.vue";
 import CovdInfo from "@/components/CovdInfo.vue";
 import ChinaCovdInfo from "@/components/ChinaCovdInfo.vue";
+import Map from "@/components/Map.vue"
 
 export default {
   name: "Home",
   components: {
     Header,
     CovdInfo,
-    ChinaCovdInfo
+    ChinaCovdInfo,
+    Map
   },
   data() {
     return {

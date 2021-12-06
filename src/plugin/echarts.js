@@ -29,31 +29,31 @@ const install = function (Vue) {
             myChart.setOption(option)
           },
           chinaMap: function(id) {
-            var dom = document.getElementById(id);
-            var myChart = echarts.init(dom);
+            var myChart = echarts.init(document.getElementById(id));
             var option = {
                 series: [{
-                  name: '省',
-                  type: 'map',
-                  map: 'china',
-                  roam: true,
+                  name: '省', 
+                  type: 'map', //配置图表类型，charts
+                  map: 'china', //中国地图
+                  roam: false, //是否允许自动缩放
                   zoom: 1.2,
                   aspectScale: 0.75,
-                  label: {
+                  label: { //配置字体
                       normal: {
                           show: true,
                           textStyle: {
-                              color: 'rgba(0,0,0,0.4)'
+                            fontSize: 8,
+                            color: 'rgba(0,0,0,0.4)'
                           }
                       }
                   },
-                  itemStyle: {
+                  itemStyle: { //配置地图样式
                       normal: {
-                          areaColor: 'rgba(0,255,236,0.1)',
-                          borderColor: 'rgba(118,237,236,1)',
+                          areaColor: 'rgba(0,255,236,0)', //区域颜色
+                          borderColor: 'rgba(118,237,236,1)', //边框颜色
                       },
-                      emphasis: {
-                          areaColor: 'rgba(118,237,236,0.8)',
+                      emphasis: { //阴影数据效果
+                          areaColor: 'rgba(255,180,0,0.8)',
                           shadowOffsetX: 0,
                           shadowOffsetY: 0,
                           shadowBlur: 20,

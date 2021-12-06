@@ -75,8 +75,8 @@
                 </li>
             </ul>
         </div>
-        <div id="line"></div>
-        <div id="chinaMap"></div>
+        <!-- <div id="line"></div>
+        <div id="chinaMap"></div> -->
     </div>
 </template>
 
@@ -91,8 +91,8 @@ export default {
         },
     },
     mounted() {
-      this.$echarts.line('line');
-      this.$echarts.chinaMap('chinaMap')
+    //   this.$echarts.line('line');
+    //   this.$echarts.chinaMap('chinaMap')
     },
     methods: {
         formatData(date) {
