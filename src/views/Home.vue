@@ -33,6 +33,7 @@ export default {
       },
       //2.存储全国整体信息
       chinaCovdInfo: {
+        modifyTime:"",
         currentConfirmedCount: "", //1.现确诊人数
         confirmedCount: "", //2.累计确诊
         suspectedCount: "", //3.现存疑似
@@ -58,24 +59,27 @@ export default {
         console.log('测试2')
         if (res.status == 200) {
           console.log(res);
-          this.covdInfo.note1 = res.data.newslist[0].desc.note1;
-          this.covdInfo.note2 = res.data.newslist[0].desc.note2;
-          this.covdInfo.note3 = res.data.newslist[0].desc.note3;
-          this.covdInfo.remark1 = res.data.newslist[0].desc.remark1;
-          this.covdInfo.remark2 = res.data.newslist[0].desc.remark2;
-          this.covdInfo.remark3 = res.data.newslist[0].desc.remark3;
-          this.chinaCovdInfo.currentConfirmedCount = res.data.newslist[0].desc.currentConfirmedCount;
-          this.chinaCovdInfo.confirmedCount = res.data.newslist[0].desc.confirmedCount;
-          this.chinaCovdInfo.suspectedCount = res.data.newslist[0].desc.suspectedCount;
-          this.chinaCovdInfo.curedCount = res.data.newslist[0].desc.curedCount;
-          this.chinaCovdInfo.deadCount = res.data.newslist[0].desc.deadCount;
-          this.chinaCovdInfo.seriousCount = res.data.newslist[0].desc.seriousCount;
-          this.chinaCovdInfo.suspectedIncr = res.data.newslist[0].desc.suspectedIncr;
-          this.chinaCovdInfo.currentConfirmedIncr = res.data.newslist[0].desc.currentConfirmedIncr;     
-          this.chinaCovdInfo.confirmedIncr = res.data.newslist[0].desc.confirmedIncr; 
-          this.chinaCovdInfo.curedIncr = res.data.newslist[0].desc.curedIncr; 
-          this.chinaCovdInfo.deadIncr = res.data.newslist[0].desc.deadIncr; 
-          this.chinaCovdInfo.seriousIncr = res.data.newslist[0].desc.seriousIncr; 
+          let desc = res.data.newslist[0].desc;
+          this.covdInfo.note1 = desc.note1;
+          this.covdInfo.note2 = desc.note2;
+          this.covdInfo.note3 = desc.note3;
+          this.covdInfo.remark1 = desc.remark1;
+          this.covdInfo.remark2 = desc.remark2;
+          this.covdInfo.remark3 = desc.remark3;
+    //国内疫情面板数据
+          this.chinaCovdInfo.modifyTime = desc.modifyTime;
+          this.chinaCovdInfo.currentConfirmedCount = desc.currentConfirmedCount;
+          this.chinaCovdInfo.confirmedCount = desc.confirmedCount;
+          this.chinaCovdInfo.suspectedCount = desc.suspectedCount;
+          this.chinaCovdInfo.curedCount = desc.curedCount;
+          this.chinaCovdInfo.deadCount = desc.deadCount;
+          this.chinaCovdInfo.seriousCount = desc.seriousCount;
+          this.chinaCovdInfo.suspectedIncr = desc.suspectedIncr;
+          this.chinaCovdInfo.currentConfirmedIncr = desc.currentConfirmedIncr;     
+          this.chinaCovdInfo.confirmedIncr = desc.confirmedIncr; 
+          this.chinaCovdInfo.curedIncr = desc.curedIncr; 
+          this.chinaCovdInfo.deadIncr = desc.deadIncr; 
+          this.chinaCovdInfo.seriousIncr = desc.seriousIncr; 
         }
       }).catch((error) => console.log(error));
   },
