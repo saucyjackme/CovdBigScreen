@@ -3,7 +3,8 @@ import axios from "axios";
 const base = {
   baseURL: "http://api.tianapi.com",
   ncov: "/ncov/index",
-  globalNcovAbroad: "/ncovabroad/index"
+  globalNcovAbroad: "/ncovabroad/index",
+  // cityNcov:"/ncovcity/index",
 }
 
 const api = {
@@ -20,7 +21,12 @@ const api = {
     return axios.get(base.baseURL + base.globalNcovAbroad, {
       params
     })
-  }
+  },
+  // getCityNcov(params) {
+  //   return axios.get(base.baseURL + base.cityNcov,{
+  //     params
+  //   })
+  // }
 }
 
 export default api;

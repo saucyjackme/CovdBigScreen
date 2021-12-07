@@ -1,6 +1,7 @@
 <template>
   <div>
     <div id="chinaMap"></div>
+    <div id="worldMap"></div>
   </div>
 </template>
 <script>
@@ -10,7 +11,9 @@ export default {
     return {};
   },
   mounted() {
+    console.log(this.$echarts);
     console.log(this.$echarts.chinaMap('chinaMap'));
+    console.log(this.$echarts.worldMap('worldMap'));
   },
   methods: {}
 };
