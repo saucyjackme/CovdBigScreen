@@ -9,7 +9,7 @@ import "../node_modules/echarts/map/js/china.js"
 import "../node_modules/echarts/map/js/world.js"
 
 //导入自定义组建
-import Tabs from './components/tabs/index'
+import Tabs from './components/tabs'
 Vue.use(Tabs);
 
 Vue.use(Echarts)

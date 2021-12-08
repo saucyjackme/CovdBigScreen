@@ -116,7 +116,7 @@ export default {
             return YY + MM + DD + hh + mm;
         },
         numZore(num){
-            return num > 0 ? "+"+num : "-" + num
+            return num > 0 ? "+"+ num : "-" + num
         }
     },
 };
