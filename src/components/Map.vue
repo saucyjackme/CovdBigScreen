@@ -8,6 +8,9 @@
   </div>
 </template>
 <script>
+import api from "../api";
+import axios from "axios"
+
 export default {
   name: "Map",
   data() {
@@ -21,6 +24,19 @@ export default {
       this.$echarts.chinaMap("chinaMap");
       this.$echarts.worldMap("worldMap");
     });
+    // api.getGlobalNcovAbroad({
+    //   key:"30c1530f5dbea7332b39bce40ca9adef" 
+    // }).then((res)=>{
+    //     console.log(res);
+    //   });
+    function getGlobalNcovAbroad() {
+      return axios.get("http://api.tianapi.com/ncovabroad/index")
+    }
+    function getCityNcov() {
+      return axios.get("http://api.tianapi.com/ncovcity/index")
+    }
+    //合并网络请求
+    
   },
   methods: {
     getIndex(index) {

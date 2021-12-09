@@ -89,8 +89,6 @@ export default {
       }).then((res)=>{
         console.log(res);
       })
-      //axios执行并发请求
-      axios.all([getNcov(),getGlobalNcovAbroad()]).then()
   },
 };
 </script>
