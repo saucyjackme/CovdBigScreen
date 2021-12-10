@@ -89,7 +89,7 @@ const install = function (Vue) {
             };
             myChart.setOption(option)
           },
-          worldMap: function (id) {
+          worldMap: function (id, data) {
             var myChart = echarts.init(document.getElementById(id));
             var option = {
               // 提示信息
@@ -104,11 +104,12 @@ const install = function (Vue) {
                 orient: "vertical", // 分段方向:horizontal水平
                 type: "piecewise", // 分段
                 pieces: [  // 配置颜色区间
-                  { min: 0, max: 0, color: "#FFFFFF" },
-                  { min: 1, max: 10, color: "#FDFDCF" },
-                  { min: 10, max: 100, color: "#FE9E83" },
-                  { min: 100, max: 500, color: "#E55A4E" },
-                  { min: 500, max: 10000, color: "#4F070D" }
+                  { min: 0, max: 0, color: "#FFCC00" },
+                  { min: 5000, max: 10000, color: "#FF3399" },
+                  { min: 10000, max: 50000, color: "#FF3366" },
+                  { min: 50000, max: 500000, color: "#FF3333" },
+                  { min: 500000, max: 5000000, color: "#CC3366" },
+                  { min: 5000000, max: 5000000000000, color: "#CC3300" }
                 ]
               }],
               series: [
@@ -335,11 +336,7 @@ const install = function (Vue) {
                     "Zambia": "赞比亚",
                     "Zimbabwe": "津巴布韦",
                   },
-                  data: [{
-                    name: "中国",
-                    value: 1000,
-                    itemStyle: { normal: { areaColor: "#red" } }
-                  }]
+                  data: data 
                 },
               ]
             };

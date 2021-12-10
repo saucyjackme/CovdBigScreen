@@ -19,7 +19,6 @@ export default {
     };
   },
   mounted() {
-    // console.log(this.$echarts);
     this.$nextTick(() => {
       this.$echarts.chinaMap("chinaMap");
       this.$echarts.worldMap("worldMap");
@@ -30,13 +29,30 @@ export default {
     //     console.log(res);
     //   });
     function getGlobalNcovAbroad() {
-      return axios.get("http://api.tianapi.com/ncovabroad/index")
+      return axios.get("http://api.tianapi.com/ncovabroad/index?key=30c1530f5dbea7332b39bce40ca9adef")
     }
     function getCityNcov() {
-      return axios.get("http://api.tianapi.com/ncovcity/index")
+      return axios.get("http://api.tianapi.com/ncovcity/index?key=30c1530f5dbea7332b39bce40ca9adef")
     }
     //合并网络请求
-    
+    axios.all([getGlobalNcovAbroad(),getCityNcov()]).then(
+      axios.spread((getGlobalNcovAbroad,getCityNcov)=> {
+      console.log(getGlobalNcovAbroad);
+      console.log(getCityNcov);
+      //获取全球不同国家的数据
+      let World = []; //定义空数组
+      for(let i = 0;i< getGlobalNcovAbroad.data.newslist.length;i++) {
+        let temp = {
+          name: getGlobalNcovAbroad.data.newslist[i].provinceName,
+          value: getGlobalNcovAbroad.data.newslist[i].confirmedCount
+        }
+        World.push(temp) 
+      }
+          this.$nextTick(() => {
+      this.$echarts.chinaMap("chinaMap");
+      this.$echarts.worldMap("worldMap",World);
+    });
+    }))
   },
   methods: {
     getIndex(index) {
