@@ -3,6 +3,10 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import "./assets/css/common.css"
+//导入第三方插件
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/swiper-bundle.css'
+Vue.use(VueAwesomeSwiper)
 //导入自定义插件
 import Echarts from "./plugin/echarts"
 import "../node_modules/echarts/map/js/china.js"

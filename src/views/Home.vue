@@ -4,6 +4,7 @@
     <covd-info :covdInfo="covdInfo"></covd-info>
     <china-covd-info :chinaCovdInfo="chinaCovdInfo"></china-covd-info>
     <Map></Map>
+    <my-swiper></my-swiper>
   </div>
 </template>
 
@@ -13,6 +14,7 @@ import Header from "@/components/Header.vue";
 import CovdInfo from "@/components/CovdInfo.vue";
 import ChinaCovdInfo from "@/components/ChinaCovdInfo.vue";
 import Map from "@/components/Map.vue"
+import MySwiper from "@/components/MySwiper.vue"
 
 export default {
   name: "Home",
@@ -20,7 +22,8 @@ export default {
     Header,
     CovdInfo,
     ChinaCovdInfo,
-    Map
+    Map,
+    MySwiper
   },
   data() {
     return {
