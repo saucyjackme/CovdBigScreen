@@ -5,6 +5,7 @@
     <china-covd-info :chinaCovdInfo="chinaCovdInfo"></china-covd-info>
     <Map></Map>
     <my-swiper></my-swiper>
+    <spring-travel></spring-travel>
   </div>
 </template>
 
@@ -15,6 +16,7 @@ import CovdInfo from "@/components/CovdInfo.vue";
 import ChinaCovdInfo from "@/components/ChinaCovdInfo.vue";
 import Map from "@/components/Map.vue"
 import MySwiper from "@/components/MySwiper.vue"
+import SpringTravel from "@/components/SpringTravel.vue"
 
 export default {
   name: "Home",
@@ -23,7 +25,8 @@ export default {
     CovdInfo,
     ChinaCovdInfo,
     Map,
-    MySwiper
+    MySwiper,
+    SpringTravel
   },
   data() {
     return {
@@ -61,9 +64,9 @@ export default {
       })
       .then((res) => {
         // console.log(res);
-        console.log('测试2')
+        // console.log('测试2')
         if (res.status == 200) {
-          console.log(res);
+          // console.log(res);
           let desc = res.data.newslist[0].desc;
           this.covdInfo.note1 = desc.note1;
           this.covdInfo.note2 = desc.note2;
@@ -90,7 +93,7 @@ export default {
       api.getGlobalNcovAbroad({
         key: "30c1530f5dbea7332b39bce40ca9adef",
       }).then((res)=>{
-        console.log(res);
+        // console.log(res);
       })
   },
 };

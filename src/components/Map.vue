@@ -37,8 +37,8 @@ export default {
     //合并网络请求
     axios.all([getGlobalNcovAbroad(),getCityNcov()]).then(
       axios.spread((getGlobalNcovAbroad,getCityNcov)=> {
-      console.log(getGlobalNcovAbroad);
-      console.log(getCityNcov);
+      // console.log(getGlobalNcovAbroad);
+      // console.log(getCityNcov);
       //获取全球不同国家的数据
       let World = []; //定义空数组
       for(let i = 0;i< getGlobalNcovAbroad.data.newslist.length;i++) {

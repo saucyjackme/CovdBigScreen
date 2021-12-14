@@ -11,6 +11,8 @@ Vue.use(VueAwesomeSwiper)
 import Echarts from "./plugin/echarts"
 import "../node_modules/echarts/map/js/china.js"
 import "../node_modules/echarts/map/js/world.js"
+//引入vant
+import "./plugin/vant"
 
 //导入自定义组建
 import Tabs from './components/tabs'

@@ -5,8 +5,12 @@ const base = {
   ncov: "/ncov/index",
   globalNcovAbroad: "/ncovabroad/index",
   // cityNcov:"/ncovcity/index",
+  juheBaseUrl:"/api",
+  springTravel:"/springTravel/citys",
 }
-
+//2021年春运防疫政策查询key:171e165a7d991c5f6ecd5194c54778ef
+//接口地址：http://apis.juhe.cn/springTravle/citys
+//方式get;参数：from to
 const api = {
   // 1.获取国内疫情总体数据
   getNcov(params) {
@@ -27,6 +31,12 @@ const api = {
   //     params
   //   })
   // }
+  //春节各地政策
+  springTravel(params){
+    return axios.get(base.juheBaseUrl + base.springTravel,{
+        params
+    })
+  },
 }
 
 export default api;
