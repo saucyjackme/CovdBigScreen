@@ -45,7 +45,7 @@ export default {
     // 全部选项选择完毕后，会触发 finish 事件
     onFinish({ selectedOptions }) {
       this.show = false;
-      this.fieldValue = selectedOptions.map((option) => option.text).join("/");
+      this.City = selectedOptions.map((option) => option.text).join("/");
       this.$emit("onValue",selectedOptions[1])
     },
   }
