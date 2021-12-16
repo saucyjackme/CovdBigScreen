@@ -5,8 +5,9 @@ const base = {
   ncov: "/ncov/index",
   globalNcovAbroad: "/ncovabroad/index",
   // cityNcov:"/ncovcity/index",
-  juheBaseUrl:"/api",
-  springTravel:"/springTravel/citys",
+  juheBaseUrl: "/api",
+  springTravel: "/springTravel/citys",
+  springTravelQuery: "/springTravel/query"
 }
 //2021年春运防疫政策查询key:171e165a7d991c5f6ecd5194c54778ef
 //接口地址：http://apis.juhe.cn/springTravle/citys
@@ -31,12 +32,18 @@ const api = {
   //     params
   //   })
   // }
-  //春节各地政策
+  //春节各地政策[城市查询]
   springTravel(params){
     return axios.get(base.juheBaseUrl + base.springTravel,{
         params
     })
   },
+  //春节各地政策[城市结果查询]
+  springTravelQuery(params) {
+    return axios.get(base.juheBaseUrl + base.springTravelQuery,{
+      params
+    })
+  }
 }
 
 export default api;
